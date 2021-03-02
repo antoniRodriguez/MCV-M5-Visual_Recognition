@@ -1,11 +1,9 @@
-# MCV-M5-Visual_Recognition
+# M5 Project: Object Detection and Segmentation
+## Group 0
 
-Your GitHub should contain a README.md file with:
+### Team members:
+* Adam Szummer - email@domain.ext
+* Sergi Garcia Sarroca - email@domain.ext
+* Antoni Rodriguez Villegas - rv.antoni@hotmail.com
 
-• Title of the project.
-
-• Name of the group.
-
-• Name and contact email of all the team members.
-
-• Link to the Overleaf article (Non-editable link) at the moment no content yet.
+• Link to the Overleaf article (non-editable): https://www.overleaf.com/read/dscbpxyptkgk
