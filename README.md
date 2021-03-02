@@ -2,7 +2,7 @@
 ## Group 0
 
 ### Team members:
-* Adam Szummer - email@domain.ext
+* Adam Szummer - a.szummer@gmail.com
 * Sergi Garcia Sarroca - email@domain.ext
 * Antoni Rodriguez Villegas - rv.antoni@hotmail.com
 
