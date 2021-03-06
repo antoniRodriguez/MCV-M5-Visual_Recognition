@@ -3,7 +3,7 @@
 
 ### Team members:
 * Adam Szummer - a.szummer@gmail.com
-* Sergi Garcia Sarroca - email@domain.ext
+* Sergi Garcia Sarroca - sergi.garciasa@e-campus.uab.cat
 * Antoni Rodriguez Villegas - rv.antoni@hotmail.com
 
 • Link to the Overleaf article (non-editable): https://www.overleaf.com/read/dscbpxyptkgk
