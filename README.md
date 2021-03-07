@@ -8,7 +8,7 @@
 
 • Link to the Overleaf article (non-editable): https://www.overleaf.com/read/dscbpxyptkgk
 
-# Week 1 Hands on Pytorch -- First Approach. 
+# Week 1: Hands on Pytorch -- First Approach. 
 
 #### Dataset
 MIT_Split
@@ -23,5 +23,5 @@ Inside tasks:
     
     - [x] Compare and coment results. 
 
-Slides for the project: [T4-Google Slides](https://docs.google.com/presentation/d/1CCaJYDuzzkllbPpFAi2q7jSul2MlvBRcbwddqgKnXOA/edit?usp=sharing)
+Slides for the project: [T00-Google Slides](https://docs.google.com/presentation/d/1CCaJYDuzzkllbPpFAi2q7jSul2MlvBRcbwddqgKnXOA/edit?usp=sharing)
 
