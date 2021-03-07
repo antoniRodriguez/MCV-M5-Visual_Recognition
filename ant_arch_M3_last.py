@@ -17,7 +17,7 @@ torch.cuda.empty_cache()
 # Optimizer - Adadelta
 # Learning rate
 
-EXPERIMENT_NAME = 'M3net_50Epochs'
+EXPERIMENT_NAME = 'keras_to_pytorch_20Epochs'
 # setup cuda
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -52,8 +52,8 @@ model.add(layers.Dense(256, activation='relu'))
 model.add(layers.Dense(8, activation='softmax'))
 
 '''
-num_epochs = 50
-batch_size = 32
+num_epochs = 20
+batch_size = 1
 train_data_dir = '../DATASETS/MIT_split/train'
 test_data_dir = '../DATASETS/MIT_split/test'
 train_data_dir='/home/mcv/datasets/MIT_split/train'
@@ -151,28 +151,38 @@ model = models.Sequential()
     model.add(layers.Dense(8, activation='softmax'))
 '''
 net = nn.Sequential(OrderedDict([
-    ('conv1', nn.Conv2d(3,64,3)),
+    ('conv1', nn.Conv2d(3,32,3)),
     ('relu1', nn.ReLU()),
-    ('conv2', nn.Conv2d(64,64,3)),
+    ('maxPool1', nn.MaxPool2d(2)),
+    ('conv2', nn.Conv2d(32,32,3)),
     ('relu2', nn.ReLU()),
-    ('batchNorm1', nn.BatchNorm2d(64)),
+    ('maxPool2', nn.MaxPool2d(2)),
+    ('conv3', nn.Conv2d(32,64,3)),
     ('relu3', nn.ReLU()),
-    ('conv3', nn.Conv2d(64,64,3)),
-    ('relu4', nn.ReLU()),
-    ('batchNorm2', nn.BatchNorm2d(64)),
-    ('relu5', nn.ReLU()),
+    ('batchNorm1', nn.BatchNorm2d(64)),
     ('conv4', nn.Conv2d(64,64,3)),
+    ('relu4', nn.ReLU()),
+    ('conv5', nn.Conv2d(64,256,3)),
+    ('relu5', nn.ReLU()),
+    ('maxPool3', nn.MaxPool2d(2)),
+    ('conv6', nn.Conv2d(256,128,3)),
     ('relu6', nn.ReLU()),
-    ('batchNorm3', nn.BatchNorm2d(64)),
+    ('batchNorm2', nn.BatchNorm2d(128)),
+    ('conv7', nn.Conv2d(128,128,3)),
     ('relu7', nn.ReLU()),
-    ('globalavgPooling', nn.AvgPool2d(1, stride=2)),
-    ('fc1', nn.Linear(64 * 125 * 125, 1024)),
-    ('dropout1',nn.Dropout(p=0.5)),
-    ('fc2', nn.Linear(1024, 1024)),
-    ('dropout2',nn.Dropout(p=0.5)),
-    ('fc3', nn.Linear(1024, 256)),      
+    ('maxPool4', nn.MaxPool2d(2)),
+    ('conv8', nn.Conv2d(128,128,3)),
+    ('relu8', nn.ReLU()),
+    ('maxPool5', nn.MaxPool2d(2)),
+    ('conv9', nn.Conv2d(128,128,3)),
+    ('relu9', nn.ReLU()),
+
+    ('fc1', nn.Linear(128 * 125 * 125, 1024)),
+    ('fc2', nn.Linear(1024, 512)),
+    ('fc3', nn.Linear(512, 256)),      
     ('fc4', nn.Linear(256, 8))
 ]))
+
 
 ###### PARAMS
 total_samples = len(train_dataset)
