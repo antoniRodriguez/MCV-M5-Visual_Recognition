@@ -2,7 +2,7 @@
 ## Group 0
 
 ### Team members:
-* _Adam Szummer_ - a.szummer@gmail.com [VanillaTiger](https://github.com/VanillaTiger)
+* _Adam Szummer_ - a.szummer@gmail.com - [VanillaTiger](https://github.com/VanillaTiger)
 * _Sergi Garcia Sarroca_ - sergi.garciasa@e-campus.uab.cat - [SoftonCV](https://github.com/SoftonCV)
 * _Antoni Rodriguez Villegas_ - rv.antoni@hotmail.com - [antoniRodriguez](https://github.com/antoniRodriguez)
 
