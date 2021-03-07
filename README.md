@@ -1,5 +1,5 @@
 # M5 Project: Object Detection and Segmentation
-## Group 0
+## Group 00
 
 ### Team members:
 * _Adam Szummer_ - a.szummer@gmail.com - [VanillaTiger](https://github.com/VanillaTiger)
@@ -10,8 +10,9 @@
 
 # Week 1 Hands on Pytorch -- First Approach. 
 
-The principal task is to adapt the model developed on M3 _DogNet_ from Keras to Pytorch.\n
-Markup: 1. Inside tasks: 
+The principal task is to adapt the model developed on M3 _DogNet_ from Keras to Pytorch.
+
+Inside tasks: 
     - [x] Plot results. 
     - [x] Compare and coment results. 
 
