@@ -13,7 +13,9 @@
 The principal task is to adapt the model developed on M3 _DogNet_ from Keras to Pytorch.
 
 Inside tasks: 
+
     - [x] Plot results. 
+    
     - [x] Compare and coment results. 
 
 Slides for the project: [T4-Google Slides](https://docs.google.com/presentation/d/1CCaJYDuzzkllbPpFAi2q7jSul2MlvBRcbwddqgKnXOA/edit?ts=6045134b#slide=id.g7039f830d9_1_11)
