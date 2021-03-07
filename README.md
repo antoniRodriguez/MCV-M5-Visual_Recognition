@@ -23,5 +23,5 @@ Inside tasks:
     
     - [x] Compare and coment results. 
 
-Slides for the project: [T4-Google Slides](https://docs.google.com/presentation/d/1CCaJYDuzzkllbPpFAi2q7jSul2MlvBRcbwddqgKnXOA/edit?ts=6045134b#slide=id.g7039f830d9_1_11)
+Slides for the project: [T4-Google Slides](https://docs.google.com/presentation/d/1CCaJYDuzzkllbPpFAi2q7jSul2MlvBRcbwddqgKnXOA/edit?usp=sharing)
 
