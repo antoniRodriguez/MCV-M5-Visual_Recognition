@@ -10,7 +10,7 @@
 
 # Week 1 Hands on Pytorch -- First Approach. 
 
-The principal task is to adapt the model developed on M3 _DogNet_ from Keras to Pytorch. 
+The principal task is to adapt the model developed on M3 _DogNet_ from Keras to Pytorch.\n
 Markup: 1. Inside tasks: 
     - [x] Plot results. 
     - [x] Compare and coment results. 
