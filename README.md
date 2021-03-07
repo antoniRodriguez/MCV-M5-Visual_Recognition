@@ -13,6 +13,8 @@
 #### Dataset
 MIT_Split
 
+![](week1/images/dataset_sample.jpeg)
+
 The principal task is to adapt the model developed on M3 _DogNet_ from Keras to Pytorch.
 
 Inside tasks: 
