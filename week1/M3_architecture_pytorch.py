@@ -11,13 +11,10 @@ from torch.optim.lr_scheduler import StepLR
 from collections import OrderedDict
 torch.cuda.empty_cache()
 
-# TODO: 
-# Adapt network to the latest version we had
-# Training accuracy - plot and check 
-# Optimizer - Adadelta
-# Learning rate
 
-EXPERIMENT_NAME = 'Final_keras_to_pytorch_100_Epochs'
+
+EXPERIMENT_NAME = '_pytorch_M3_architecture_30_Epochs'
+
 # setup cuda
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -28,16 +25,15 @@ def imshow(img):
     plt.imshow(np.transpose(npimg, (1, 2, 0)))
     plt.savefig('file.png')
 
-    
-num_epochs = 100
+num_epochs = 30
 batch_size = 32
-train_data_dir = '../DATASETS/MIT_split/train'
-test_data_dir = '../DATASETS/MIT_split/test'
-train_data_dir='/home/mcv/datasets/MIT_split/train'
+#train_data_dir = '../DATASETS/MIT_split/train'
+#test_data_dir = '../DATASETS/MIT_split/test'
 #val_data_dir='/home/mcv/datasets/MIT_split/test'
+train_data_dir='/home/mcv/datasets/MIT_split/train'
 test_data_dir='/home/mcv/datasets/MIT_split/test'
 
-# DATA TRANSFORM
+# DATA TRANSFORMS
 transform = transforms.Compose(
     [#transforms.ToPILImage(),
     #transforms.RandomHorizontalFlip(p=0.5),
@@ -46,9 +42,9 @@ transform = transforms.Compose(
 
 
 ## CREATE TEST/TRAIN/VALIDATION DATA AND DATALOADER STRUCTURES
+validation_split = 0.1
 train_dataset = torchvision.datasets.ImageFolder(train_data_dir, transform=transform)
 '''
-validation_split = 0.1
 train_subset, val_subset = torch.utils.data.random_split(
         train_dataset, [int(len(train_dataset)-int(train_dataset*validation_split)), int(len(train_dataset)*validation_split)], 
         generator=torch.Generator().manual_seed(1))
@@ -71,7 +67,7 @@ class Print(nn.Module):
         print("FC1 INPUT SIZE:")
         print(x.size())
         return x
-    
+
 class Flatten(torch.nn.Module):
     def forward(self, x):
         return x.view(-1,128*3*3)
@@ -102,7 +98,7 @@ net = nn.Sequential(OrderedDict([
     ('conv8', nn.Conv2d(128,128,3)),
     ('relu8', nn.ReLU()),
     ('maxPool5', nn.MaxPool2d(2)),
-    ('conv9', nn.Conv2d(128,128,3)), #('conv9', nn.Conv2d(128,128,3)),
+    ('conv9', nn.Conv2d(128,128,3)), 
     ('relu9', nn.ReLU()),
     #('print',Print()),
     ('Flatten', Flatten()),
@@ -119,11 +115,10 @@ total_samples = len(train_dataset)
 n_iterations = np.ceil(total_samples/batch_size)
 print(total_samples,n_iterations)
 
-# NN creation
+# NN to CUDA
 #net = Net()
 net = net.cuda()
 net.to(device)
-print("Created network")
 
 # Optimizer and loss function
 criterion = nn.CrossEntropyLoss()
@@ -145,7 +140,6 @@ for epoch in range(num_epochs):
     loss_epoch = 0
     for i, (inputs,labels) in enumerate(train_loader):
         # forward, backward, update
-        #print(f'epoch {epoch+1}/{num_epochs}, step {i+1}/{n_iterations}, inputs {inputs.shape}')
 
         inputs = inputs.cuda()
         inputs = inputs.to(device)
@@ -214,7 +208,7 @@ for epoch in range(num_epochs):
 print('Finished Training')
 
 
-PATH = './adadelta-augmentation.pth'
+PATH = './pytorch_M3_architecture.pth'
 torch.save(net.state_dict(), PATH)
 
 correct = 0
@@ -235,5 +229,5 @@ with torch.no_grad():
 print('Accuracy of the network on the 801 test images: %d %%' % (
     100 * correct / total))
 
-with open('Adam-Adamax-Augmentation.txt','a') as file:
+with open('pytorch_M3_architecture.txt','a') as file:
                 file.writelines('Accuracy of the network on the 801 test images: %d %%' % (100 * correct / total))
