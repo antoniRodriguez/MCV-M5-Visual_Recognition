@@ -17,7 +17,7 @@ torch.cuda.empty_cache()
 # Optimizer - Adadelta
 # Learning rate
 
-EXPERIMENT_NAME = 'keras_to_pytorch_20Epochs'
+EXPERIMENT_NAME = 'Final_keras_to_pytorch_100_Epochs'
 # setup cuda
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -50,10 +50,10 @@ model.add(layers.Dense(1024, activation='relu'))
 model.add(layers.Dense(512, activation='relu'))
 model.add(layers.Dense(256, activation='relu'))
 model.add(layers.Dense(8, activation='softmax'))
-
 '''
-num_epochs = 20
-batch_size = 1
+
+num_epochs = 100
+batch_size = 32
 train_data_dir = '../DATASETS/MIT_split/train'
 test_data_dir = '../DATASETS/MIT_split/test'
 train_data_dir='/home/mcv/datasets/MIT_split/train'
@@ -150,6 +150,16 @@ model = models.Sequential()
     model.add(layers.Dropout(0.5))
     model.add(layers.Dense(8, activation='softmax'))
 '''
+class Print(nn.Module):
+    def forward(self, x):
+        print("FC1 INPUT SIZE:")
+        print(x.size())
+        return x
+
+class Flatten(torch.nn.Module):
+    def forward(self, x):
+        return x.view(-1,128*3*3)
+
 net = nn.Sequential(OrderedDict([
     ('conv1', nn.Conv2d(3,32,3)),
     ('relu1', nn.ReLU()),
@@ -174,14 +184,16 @@ net = nn.Sequential(OrderedDict([
     ('conv8', nn.Conv2d(128,128,3)),
     ('relu8', nn.ReLU()),
     ('maxPool5', nn.MaxPool2d(2)),
-    ('conv9', nn.Conv2d(128,128,3)),
+    ('conv9', nn.Conv2d(128,128,3)), #('conv9', nn.Conv2d(128,128,3)),
     ('relu9', nn.ReLU()),
-
-    ('fc1', nn.Linear(128 * 125 * 125, 1024)),
+    #('print',Print()),
+    ('Flatten', Flatten()),
+    #('print',Print()),
+    ('fc1', nn.Linear(128*3*3, 1024)),
     ('fc2', nn.Linear(1024, 512)),
     ('fc3', nn.Linear(512, 256)),      
-    ('fc4', nn.Linear(256, 8))
-]))
+    ('fc4', nn.Linear(256, 8)) 
+    ])) 
 
 
 ###### PARAMS
@@ -217,7 +229,7 @@ for epoch in range(num_epochs):
     loss_epoch = 0
     for i, (inputs,labels) in enumerate(train_loader):
         # forward, backward, update
-        print(f'epoch {epoch+1}/{num_epochs}, step {i+1}/{n_iterations}, inputs {inputs.shape}')
+        #print(f'epoch {epoch+1}/{num_epochs}, step {i+1}/{n_iterations}, inputs {inputs.shape}')
 
         inputs = inputs.cuda()
         inputs = inputs.to(device)
@@ -225,21 +237,21 @@ for epoch in range(num_epochs):
         labels = labels.to(device)
 
         # Forward pass
-        print("Begin forward...")
+        #print("Begin forward...")
         outputs = net(inputs)
-        print("Ended forward...")
-        print("Start loss...")
+        #print("Ended forward...")
+        #print("Start loss...")
         loss = criterion(outputs, labels)
-        print("Ended loss...")
+        #print("Ended loss...")
 
         # Backward and optimize
         optimizer.zero_grad()
-        print("Begin loss backward...")
+        #print("Begin loss backward...")
         loss.backward()
-        print("Ended loss backward...")
-        print("Begin optimizer.step...")
+        #print("Ended loss backward...")
+        #print("Begin optimizer.step...")
         optimizer.step()
-        print("Ended optimizer.step...")
+        #print("Ended optimizer.step...")
         _, predicted = torch.max(outputs.data,1)
         correct += (predicted == labels).float().sum()
 
@@ -248,13 +260,14 @@ for epoch in range(num_epochs):
             print (f'Epoch [{epoch+1}/{num_epochs}], Step [{i+1}/{len(train_loader)}], Loss: {loss.item():.4f}')
         loss_epoch = loss.item()
         running_loss += loss_epoch
+
     # VALIDATION
     val_total = 0
     val_correct = 0
     running_val_loss = 0
     with torch.no_grad():
         for i,(inputs,labels) in enumerate(validation_loader):
-            print("Validation step "+str(i))
+            #print("Validation step "+str(i))
             inputs = inputs.to(device)
             labels = labels.to(device)
 
@@ -277,8 +290,10 @@ for epoch in range(num_epochs):
 
 
     accuracy = 100 * correct / 1881
-    print(f"\n************Accuracy = {accuracy}*******************")
-    print(f"************Loss = {train_loss:.4f}*****************\n")
+    print(f"\n************ Accuracy = {accuracy}*******************")
+    print(f"************ Loss = {train_loss:.4f}*****************\n")
+    print(f"\n************ Validation Accuracy = {val_accuracy}*******************")
+    print(f"************ Loss = {val_loss:.4f}*****************\n")
     scheduler.step()
     writer.add_scalar('Loss/train'+EXPERIMENT_NAME, train_loss, epoch)
     writer.add_scalar('Accuracy/train'+EXPERIMENT_NAME, accuracy, epoch)
