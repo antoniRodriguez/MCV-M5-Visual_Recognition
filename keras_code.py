@@ -11,7 +11,7 @@ from keras.callbacks import TensorBoard
 import matplotlib.pyplot as plt
 from keras import optimizers
 
-end='M5_keras'
+end='useless_test'
 
 #end='activation_'+str(idx)
 BOARD_PATH = '../outs/'
@@ -23,7 +23,7 @@ test_data_dir='/home/mcv/datasets/MIT_split/test'
 img_width = 224
 img_height=224
 batch_size=32
-number_of_epoch=200
+number_of_epoch=20
 validation_samples=807
 
 
@@ -89,7 +89,7 @@ def create_model():
     model.add(layers.Dense(1024, activation='relu'))
     model.add(layers.Dense(512, activation='relu'))
     model.add(layers.Dense(256, activation='relu'))
-    #model.add(layers.Dropout(0.2))
+    model.add(layers.Dropout(0.2))
     model.add(layers.Dense(8, activation='softmax'))
 
     model.compile(loss='categorical_crossentropy',optimizer='Adamax', metrics=['accuracy'])
@@ -157,8 +157,8 @@ history=model.fit_generator(train_generator,
         validation_steps= (int(validation_samples//batch_size)+1), callbacks=[tbCallBack])
 
 
-result = model.evaluate_generator(test_generator, val_samples=validation_samples)
-print( result)
+result = model.evaluate_generator(test_generator, int(validation_samples//batch_size))
+print(result)
 
 #saving model
 model.save(f'../model_{EXPERIMENT_NAME}.h5')
