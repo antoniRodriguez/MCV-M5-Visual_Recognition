@@ -11,11 +11,10 @@ from keras.callbacks import TensorBoard
 import matplotlib.pyplot as plt
 from keras import optimizers
 
-end='useless_test'
+end='keras_model'
 
-#end='activation_'+str(idx)
 BOARD_PATH = '../outs/'
-EXPERIMENT_NAME = f'{end}_training'
+EXPERIMENT_NAME = 'keras_training'
 
 train_data_dir='/home/mcv/datasets/MIT_split/train'
 val_data_dir='/home/mcv/datasets/MIT_split/test'
@@ -47,24 +46,8 @@ def preprocess_input(x, dim_ordering='default'):
         x[:, :, 1] -= 116.779
         x[:, :, 2] -= 123.68
     return x
-    '''
-    self.conv1 = nn.Conv2d(3, 32, 3)
-        self.pool = nn.MaxPool2d(2, 2)
-        self.conv2 = nn.Conv2d(32, 64, 3)
-        self.conv3 = nn.Conv2d(64, 64, 3)
-        self.batchnorm1 = nn.BatchNorm2d(64)
-        self.conv4 = nn.Conv2d(64, 64, 3)
-        self.conv5 = nn.Conv2d(64, 256, 3)
-        self.conv6 = nn.Conv2d(256, 128, 3)
-        self.batchnorm2 = nn.BatchNorm2d(128)
-        self.conv7 = nn.Conv2d(128, 128, 3)
-        self.conv8 = nn.Conv2d(128, 128, 3)
-        self.conv9 = nn.Conv2d(128, 128, 3)
-        self.fc1 = nn.Linear(128 * 25 * 25, 1024)
-        self.fc2 = nn.Linear(1024, 512)
-        self.fc3 = nn.Linear(512, 256)
-        self.fc4 = nn.Linear(256, 8)
-    '''
+    
+	
 # create the base pre-trained model
 def create_model():
     model = models.Sequential()
@@ -103,15 +86,6 @@ with open(f'../model_{EXPERIMENT_NAME}.txt','w') as file:
 
 plot_model(model, to_file=f'../model_{EXPERIMENT_NAME}.png', show_shapes=True, show_layer_names=True)
 
-
-#Freezing layers
-#for layer in base_model.layers:
-#    layer.trainable = False
-
-#Unfreezeing layers
-#for idx in range(-2,end,-1):
-#  base_model.layers[idx].trainable=True
-    
     
 for layer in model.layers:
     print(layer.name, layer.trainable)
