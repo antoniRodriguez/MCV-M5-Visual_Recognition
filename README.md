@@ -17,7 +17,7 @@ MIT_Split
 
 The principal task is to adapt the model developed on M3 _DogNet_ from Keras to Pytorch.
 
-Inside `week1/` the files `M3_architecture_pytorch.py` and `keras_code.py` with the same Neural Network architecture implemented in pytorch and keras respectively.
+Inside `week1/` are the files `pytorch_code.py` and `keras_code.py` with the same Neural Network architecture implemented in pytorch and keras respectively.
 
 Tasks found in the slides: 
 
