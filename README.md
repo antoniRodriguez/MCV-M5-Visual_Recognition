@@ -29,5 +29,5 @@ Tasks found in the slides:
     
     - [x] Compare and coment results. 
 
-Slides for the project: [T00-Google Slides](https://docs.google.com/presentation/d/1CCaJYDuzzkllbPpFAi2q7jSul2MlvBRcbwddqgKnXOA/edit?usp=sharing)
+Slides for the project: [T00-Google Slides](https://drive.google.com/file/d/1V-DBDaNfA9D9suM7nESWCVp5tNBI7pY0/view?usp=sharing)
 
