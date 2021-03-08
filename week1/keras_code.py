@@ -19,8 +19,8 @@ EXPERIMENT_NAME = 'keras_training'
 train_data_dir='/home/mcv/datasets/MIT_split/train'
 val_data_dir='/home/mcv/datasets/MIT_split/test'
 test_data_dir='/home/mcv/datasets/MIT_split/test'
-img_width = 224
-img_height=224
+img_width = 254
+img_height=254
 batch_size=32
 number_of_epoch=20
 validation_samples=807
@@ -51,7 +51,7 @@ def preprocess_input(x, dim_ordering='default'):
 # create the base pre-trained model
 def create_model():
     model = models.Sequential()
-    model.add(layers.Conv2D(32, (3,3), activation='relu', input_shape=(224,224,3)))
+    model.add(layers.Conv2D(32, (3,3), activation='relu', input_shape=(254,254,3)))
     model.add(layers.MaxPooling2D())
     model.add(layers.Conv2D(32, (3,3),activation='relu'))
     model.add(layers.MaxPooling2D())
