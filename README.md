@@ -6,7 +6,7 @@
 * _Sergi Garcia Sarroca_ - sergi.garciasa@e-campus.uab.cat - [SoftonCV](https://github.com/SoftonCV)
 * _Antoni Rodriguez Villegas_ - rv.antoni@hotmail.com - [antoniRodriguez](https://github.com/antoniRodriguez)
 
-• Link to the Overleaf article (non-editable): https://www.overleaf.com/read/dscbpxyptkgk
+
 
 # Week 2: Hands on Detectron -- FasterRCNN, Retina, FineTuning. 
 
@@ -31,5 +31,7 @@ Tasks to be done:
     
     - [x] Review state of the art object detection. 
 
-Slides for the project: [T00-Google Slides] https://docs.google.com/presentation/d/1b1SwpNROnXxFXRYwuKHxv2l9IO0JhPoF3N-lLz-iT7M/edit?usp=sharing
+- Slides for the project: [T00-Google Slides] https://docs.google.com/presentation/d/1b1SwpNROnXxFXRYwuKHxv2l9IO0JhPoF3N-lLz-iT7M/edit?usp=sharing
+
+- Link to the Overleaf article (non-editable): https://www.overleaf.com/read/dscbpxyptkgk
 
