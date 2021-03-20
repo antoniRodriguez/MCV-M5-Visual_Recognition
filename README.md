@@ -26,7 +26,7 @@ Tasks to be done:
   - [x] Train Faster R-CNN on KITTI dataset. 
   - [x] Review state of the art object detection. 
 
-- Slides for the project: [T00-Google Slides] https://docs.google.com/presentation/d/1b1SwpNROnXxFXRYwuKHxv2l9IO0JhPoF3N-lLz-iT7M/edit?usp=sharing
+- Slides for the project: [T00-Google Slides](https://docs.google.com/presentation/d/1b1SwpNROnXxFXRYwuKHxv2l9IO0JhPoF3N-lLz-iT7M/edit?usp=sharing)
 
-- Link to the Overleaf article (non-editable):[Group00-Overleaf] https://www.overleaf.com/read/ryjfqgkckfdx
+- Link to the Overleaf article (non-editable): [Group00-Overleaf](https://www.overleaf.com/read/ryjfqgkckfdx)
 
