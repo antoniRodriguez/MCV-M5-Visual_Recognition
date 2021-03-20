@@ -28,4 +28,5 @@ Tasks to be done:
 
 - Slides for the project: [T00-Google Slides] https://docs.google.com/presentation/d/1b1SwpNROnXxFXRYwuKHxv2l9IO0JhPoF3N-lLz-iT7M/edit?usp=sharing
 
-- Link to the Overleaf article (non-editable): https://www.overleaf.com/read/dscbpxyptkgk
+- Link to the Overleaf article (non-editable):[Group00-Overleaf] https://www.overleaf.com/read/ryjfqgkckfdx
+
