@@ -19,7 +19,7 @@ The principal task is to run Faster RCN, Retina on MIT data split and evaluate i
 
 Inside `week2/` are the files with implementation of Faster RCNN, Retina, FineTuning script as well as supporting scripts implemented in pytorch
 
-Tasks to be done: 
+(b) Tasks to be done: 
 
     - [x] Tutorial on detectron2. 
 
