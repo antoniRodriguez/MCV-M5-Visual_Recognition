@@ -35,3 +35,8 @@ Tasks to be done:
 
 - Link to the Overleaf article (non-editable): https://www.overleaf.com/read/dscbpxyptkgk
 
+(a) Apply pre-trained Mask-RCNN models to KITTI-MOTS validation set. Trying different configurations:
+  - [x] Number of layers
+  - [x] Backbone configuration
+  - [x] Use of Feature Pyramid Network
+  - [x] Use of training data (COCO vs COCO+Cityscapes)
