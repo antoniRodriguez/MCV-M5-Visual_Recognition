@@ -22,12 +22,9 @@ Inside `week1/` are the files `pytorch_code.py` and `keras_code.py` with the sam
 Tasks found in the slides: 
 
     - [x] NN architecture description. 
-
     - [x] Description of hyperparameters used. 
-    
-    - [x] Plot of the results.
-    
-    - [x] Compare and coment results. 
+    - [x]Plot of the results.
+    - [x]Compare and coment results. 
 
 Slides for the project: [T00-Google Slides](https://drive.google.com/file/d/1NczZXvarT18L7K2T6ER6LL3qt_lhMOoh/view?usp=sharing)
 
