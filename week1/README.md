@@ -20,11 +20,10 @@ The principal task is to adapt the model developed on M3 _DogNet_ from Keras to 
 Inside `week1/` are the files `pytorch_code.py` and `keras_code.py` with the same Neural Network architecture implemented in pytorch and keras respectively.
 
 Tasks found in the slides: 
-
-    - [x] NN architecture description. 
-    - [x] Description of hyperparameters used. 
-    - [x]Plot of the results.
-    - [x]Compare and coment results. 
+- [x] NN architecture description. 
+- [x] Description of hyperparameters used.
+- [x] Plot of the results.
+- [x] Compare and coment results. 
 
 Slides for the project: [T00-Google Slides](https://drive.google.com/file/d/1NczZXvarT18L7K2T6ER6LL3qt_lhMOoh/view?usp=sharing)
 
