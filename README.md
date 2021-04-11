@@ -56,6 +56,7 @@ Main tasks:
 (a) Apply pre-trained Mask-RCNN models to KITTI-MOTS validation set. Trying different configurations:
 
 • Get quantitative and qualitative results for both object detection and object segmentation
+
 • Analyze the different configurations depending on:
 
   - [x] Number of layers
@@ -66,6 +67,7 @@ Main tasks:
  (b) Train Mask-RCNN model on KITTI-MOTS and MOTSChallenge training sets and evaluate on KITTIMOTS validation set.
  
 • Get quantitative and qualitative results for both object detection and object segmentation
+
 • Compare REsults depending on the training data used:
  
   - [x] COCO (Task a)
@@ -78,6 +80,7 @@ Main tasks:
  (c) Explore and analyze the impact of different hyperparameters
  
 • Fine-tuning on KITTI-MOTS training and evaluation on KITTI-MOTS validation
+
 • Analyze at least 3 hyperparameters you can find on the configuration file:
  
   - [x] Anchor sizes and anchor aspect ratios
