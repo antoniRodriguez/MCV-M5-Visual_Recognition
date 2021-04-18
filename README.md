@@ -6,55 +6,36 @@
 * _Sergi Garcia Sarroca_ - sergi.garciasa@e-campus.uab.cat - [SoftonCV](https://github.com/SoftonCV)
 * _Antoni Rodriguez Villegas_ - rv.antoni@hotmail.com - [antoniRodriguez](https://github.com/antoniRodriguez)
 
-# Week 4: Hands on Detectron -- Object Detection and Instance Segmentation. 
+# Week 5: Hands on Detectron -- Object Detection and Instance Segmentation with Out of Context Datasets. 
 
 Main tasks:
 
-(a) Apply pre-trained Mask-RCNN models to KITTI-MOTS validation set. Trying different configurations:
+(a) Out-of-Context Dataset:
 
-• Get quantitative and qualitative results for both object detection and object segmentation
+ - [x] Get qualitative results on Out-of-Context Dataset
+ - [x] Analyze the results. Why do you think it fails if it fails?
 
-• Analyze the different configurations depending on:
+(b) MSCOCO Dataset by transplanting new objects by co-occurrence:
 
-  - [x] Number of layers
-  - [x] Backbone configuration
-  - [x] Use of Feature Pyramid Network
-  - [x] Use of training data (COCO vs COCO+Cityscapes)
-
- (b) Train Mask-RCNN model on KITTI-MOTS and MOTSChallenge training sets and evaluate on KITTIMOTS validation set.
+ - [x] Transplant objects from test set of COCO
+ - [x] Transplanting New Object according to Co-occurrence of objects. Refer to Figure 1 in original paper
  
-• Get quantitative and qualitative results for both object detection and object segmentation
+(c) MSCOCO Dataset by qualitatively Transplant:
 
-• Compare REsults depending on the training data used:
- 
-  - [x] COCO (Task a)
-  - [x] COCO + Cityscapes (Task a)
-  - [x] COCO + KITTI-MOTS
-  - [x] COCO + KITTI-MOTS + MOTSChallenge
-  - [x] COCO + Cityscapes + KITTI-MOTS 
-  - [x] COCO + Cityscapes + KITTI-MOTS + MOTSChallenge
- 
- (c) Explore and analyze the impact of different hyperparameters
- 
-• Fine-tuning on KITTI-MOTS training and evaluation on KITTI-MOTS validation
+- [x] Transplant objects from test set of COCO
+- [x] Qualitatively Transplant Existing Object - Refer to Figure 2 in original paper
+- [x] Can you do this in a quantitative manner? (Optional)
+      – Randomly
+      – Intersection over Union
 
-• Analyze at least 3 hyperparameters you can find on the configuration file:
- 
-  - [x] Anchor sizes and anchor aspect ratios
-  - [x] IOU overlap ratios: BG_IOU_THRESHOLD, FG_IOU_THRESHOLD
-  - [x] Maximum number of region proposals. 
- 
- (d) Extend Related Work and Experiments section on your paper
- 
-  - [x] Extend Experiments section with the experiments performed on both object detection and segmentation
-  - [x] Extend Related Work section with a description of stateof-the-art object segmentation techniques
+(d) MSCOCO Dataset by Feature interference:
+
+- [x] Transplant objects from test set of COCO
+- [x] Feature interference according to Co-occurrence of objects - Refer to Figure 3 in original paper
 
 
-- Slides for the project: [T00-Google Slides](https://docs.google.com/presentation/d/1hpHVLfExs58Ks25nwExQLpDPJom7CD98961NIXcQ_4s/edit?usp=sharing)
+- Slides for the project: [T00-Google Slides](https://docs.google.com/presentation/d/1YSVXhSZa1P42c2U2PGMVDvxRqLJyjzMRfwXfLtZQ8s8/edit?usp=sharing)
 
-- Link to the Overleaf article (non-editable): [Group00-Overleaf](https://www.overleaf.com/read/ryjfqgkckfdx)
-
-
-
+- Link to the Overleaf article (non-editable): [Group00-Overleaf](https://www.overleaf.com/read/hrtjvynhkdcw)
 
 
