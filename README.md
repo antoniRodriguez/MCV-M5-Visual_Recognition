@@ -24,9 +24,7 @@ Main tasks:
 
 - [x] Transplant objects from test set of COCO
 - [x] Qualitatively Transplant Existing Object - Refer to Figure 2 in original paper
-- [x] Can you do this in a quantitative manner? (Optional)
-      – Randomly
-      – Intersection over Union
+
 
 (d) MSCOCO Dataset by Feature interference:
 
